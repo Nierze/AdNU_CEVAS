@@ -39,4 +39,4 @@ def student_info(request, student_number):
         print(cert.certificate_name)  
     
     # Return the rendered template with the complete context after the loop
-    return render(request, 'info.html', contexts)  
+    return render(request, 'View-Certificate-Page.html', contexts)  

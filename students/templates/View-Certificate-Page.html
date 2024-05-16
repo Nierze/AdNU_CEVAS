@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ateneo Certificate Validation System</title>
+<style>
+  body, html {
+    margin: 0;
+    height: 100%;
+  }
+  .header {
+    background-color: #0047AB;
+    padding: 15px;
+    text-align: center;
+    color: white;
+  }
+  .footer {
+    background-color: #343434;
+    color: white;
+    padding: 40px;
+    position: absolute;
+    width: 100%;
+  }
+  .yellow-line {
+    height: 5px;
+    background-color: #FFAC1C;
+  }
+  .container {
+    padding: 70px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .user-info img {
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .user-info div {
+    font-size: 20px; 
+    padding: 70px 0;
+  }
+  .button {
+    width: 240px; 
+    padding: 15px;
+    margin: 5px;
+    border: 2px solid #0072c6; 
+    border-radius: 8px;
+    background-color: white;
+    color: #0072c6; 
+    cursor: pointer;
+    font-size: 20px; 
+    transition: all 0.3s ease; 
+  }
+  .buttondivider{
+      padding: 70px 0;
+  }
+  .button:hover {
+    background-color: #0072c6; 
+    color: white; 
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <!-- Placeholder for logo -->
+    <img src="path-to-logo.png" alt="Logo" style="float:left;">
+    <h1>Ateneo Certificate Validation System</h1>
+  </div>
+  <div class="container">
+     <div class="user-info">
+        <img src="placeholder.jpg" alt="User Image" width="100"> <!-- Placeholder image -->
+        <div>{{ name }}</div> <!-- Replace with actual user name -->
+        <div>{{ course }}</div>
+        <div>{{ student_id }}</div>
+    </div>
+
+    {% for certificate_box in certificate_boxes %} 
+      {{ certificate_box|safe }}  
+    {% endfor %}
+
+    <div>
+    <button class="button">Item 1</button>
+    <button class="button">Item 2</button>
+    <button class="button">Item 3</button>
+    <button class="button">Item 4</button>
+    </div>
+  </div>
+  <div class="yellow-line"></div>
+  <div class="footer">
+  </div>
+</body>
+</html>
