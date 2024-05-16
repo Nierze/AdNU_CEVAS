@@ -15,6 +15,12 @@ class Student(models.Model):
     course = models.CharField(max_length=50)
     student_number = models.CharField(max_length=10, unique=True, validators=[RegexValidator(r'^CO\d{4}-\d{5}$', message='Invalid student number format')], primary_key=True)
     
+class Certificate(models.Model):
     
-    
-# sampleStudent = Student(first_name='Juan', last_name='Dela Cruz', middle_name='Santos', email='jd@gmail.com, course='BSIT', student_number='CO2021-12345')
+    def __repr__(self):
+        return self.student_number + ": " + self.certificate_type + ' ' + self.date_issued
+        
+    student_number = models.ForeignKey(Student, on_delete=models.CASCADE)
+    certificate_name = models.CharField(max_length=64)
+    date_issued = models.DateField()
+    certificate_hash = models.CharField(max_length=64, primary_key=True)

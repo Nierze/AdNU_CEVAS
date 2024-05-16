@@ -79,6 +79,13 @@
     <p>Name: {{ name }}</p>
     <p>Course: {{ course }}</p>
     <p>Student ID: {{ student_id }}</p>
+  
+    {% for certificate_box in certificate_boxes %} 
+      {{ certificate_box|safe }}  
+    {% endfor %}
+
+
 
 </body>
 </html>
+
