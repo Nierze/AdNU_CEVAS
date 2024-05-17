@@ -1,4 +1,22 @@
-<form method="POST" action="{% url 'student_info' %}">
-    <input type="text" name="query" placeholder="Search...">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Search Bar</title>
+</head>
+<body>
+
+  <form action="{% url 'search' %}" method="GET">
+    <input type="text" placeholder="Search by Student ID..." name="search">
     <button type="submit">Search</button>
-</form>
+  </form>
+
+  {% for certificate_box in certificate_boxes %} 
+  {{ certificate_box|safe }}  
+    {% endfor %}
+
+  {% if error_message %}
+    <p>{{ error_message }}</p>
+  {% endif %}
+
+</body>
+</html>
