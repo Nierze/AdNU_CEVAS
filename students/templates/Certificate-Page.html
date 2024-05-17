@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ateneo Certificate Validation System</title>
+<style>
+  body, html {
+    margin: 0;
+    height: 100%;
+  }
+  .header {
+    background-color: #0047AB;
+    padding: 15px;
+    text-align: center;
+    color: white;
+  }
+  .footer {
+    background-color: #343434;
+    color: white;
+    padding: 40px;
+    position: absolute;
+    width: 100%;
+  }
+  .yellow-line {
+    height: 5px;
+    background-color: #FFAC1C;
+  }
+  .container {
+    padding: 70px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .certificate-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .certificate-header {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .user-info {
+    margin-bottom: 5px;
+  }
+  .hashcode-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .copy-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .button {
+    width: 240px; 
+    padding: 15px;
+    margin: 5px;
+    border: 2px solid #0072c6; 
+    border-radius: 8px;
+    background-color: white;
+    color: #0072c6; 
+    cursor: pointer;
+    font-size: 20px; 
+    transition: all 0.3s ease; 
+  }
+  .buttondivider{
+      padding: 20px 0;
+  }
+  .button:hover {
+    background-color: #0072c6; 
+    color: white; 
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <!-- Placeholder for logo -->
+    <img src="path-to-logo.png" alt="Logo" style="float:left;">
+    <h1>Ateneo Certificate Validation System</h1>
+  </div>
+  <div class="container">
+    <div class="certificate-container">
+        <img src="certificate-placeholder.jpg" alt="Certificate" width="600"> <!-- Placeholder image -->
+        <div><a href="certificate.pdf" download>Download as PDF</a></div>
+    </div>
+
+    <div class="certificate-header">Certificate Name</div> <!-- Replace with actual certificate name -->
+    <div class="user-info">User Name</div> <!-- Replace with actual user name -->
+    <div class="user-info">Date Earned: Date</div> <!-- Replace with actual date earned -->
+
+    <div class="hashcode-container">
+        <span>Unique Hashcode</span> <!-- Replace with actual hashcode -->
+        <button class="copy-button" onclick="copyHashcode()">Copy</button>
+    </div>
+    <div class="buttondivider"></div>
+
+    <div>
+    <button class="button">Item 1</button>
+    <button class="button">Item 2</button>
+    <button class="button">Item 3</button>
+    <button class="button">Item 4</button>
+    </div>
+  </div>
+  <div class="yellow-line"></div>
+  <div class="footer">
+  </div>
+</body>
+</html>

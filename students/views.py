@@ -40,3 +40,8 @@ def student_info(request, student_number):
     
     # Return the rendered template with the complete context after the loop
     return render(request, 'View-Certificate-Page.html', contexts)  
+
+def search(request):
+    print(request)
+    return render(request, 'testSearch.html')   
+    
