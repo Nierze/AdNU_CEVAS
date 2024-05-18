@@ -28,21 +28,24 @@
   }
   .container {
     padding: 70px 0;
+    min-height: calc(100% - 160px);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: calc(100% - 160px);
   }
   .certificate-container {
     text-align: center;
     margin-bottom: 20px;
   }
   .certificate-header {
-    font-size: 32px;
+    font-size: 60px;
     margin-bottom: 10px;
   }
   .user-info {
+    font-size: 30px;
     margin-bottom: 5px;
   }
   .hashcode-container {
@@ -86,30 +89,20 @@
     <h1>Ateneo Certificate Validation System</h1>
   </div>
   <div class="container">
-    <div class="certificate-container">
-        <img src="certificate-placeholder.jpg" alt="Certificate" width="600"> <!-- Placeholder image -->
-        <div><a href="certificate.pdf" download>Download as PDF</a></div>
-    </div>
 
-    <div class="certificate-header">Certificate Name</div> <!-- Replace with actual certificate name -->
-    <div class="user-info">User Name</div> <!-- Replace with actual user name -->
-    <div class="user-info">Date Earned: Date</div> <!-- Replace with actual date earned -->
+    <div class="certificate-header"><b>{{certificate_name}}</b></div> <!-- Replace with actual certificate name -->
+    <div class="buttondivider"></div>
+    <div class="user-info">{{name}}</div> <!-- Replace with actual user name -->
+    <div class="user-info">Date Earned: {{date_issued}}</div> <!-- Replace with actual date earned -->
 
     <div class="hashcode-container">
-        <span>Unique Hashcode</span> <!-- Replace with actual hashcode -->
+        <span>{{certificate_hash}}</span> <!-- Replace with actual hashcode -->
         <button class="copy-button" onclick="copyHashcode()">Copy</button>
     </div>
     <div class="buttondivider"></div>
-
-    <div>
-    <button class="button">Item 1</button>
-    <button class="button">Item 2</button>
-    <button class="button">Item 3</button>
-    <button class="button">Item 4</button>
-    </div>
   </div>
   <div class="yellow-line"></div>
-  <div class="footer">
-  </div>
+  <footer class="footer">
+  </footer>
 </body>
 </html>

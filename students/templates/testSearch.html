@@ -10,5 +10,9 @@
     <button type="submit">Search</button>
   </form>
 
+  {% for certificate_box in certificate_boxes %} 
+  {{ certificate_box|safe }}  
+  {% endfor %}
+
 </body>
 </html>

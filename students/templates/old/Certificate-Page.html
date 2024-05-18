@@ -34,22 +34,33 @@
     align-items: center;
     justify-content: center;
   }
-  .user-info {
-    display: flex;
-    align-items: center;
+  .certificate-container {
+    text-align: center;
     margin-bottom: 20px;
   }
-  .user-info img {
-    border-radius: 50%;
-    margin-right: 20px;
+  .certificate-header {
+    font-size: 32px;
+    margin-bottom: 10px;
   }
-  .user-info div {
-    font-size: 20px; 
-    padding: 70px 0;
+  .user-info {
+    margin-bottom: 5px;
+  }
+  .hashcode-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .copy-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
   .button {
-    align-items: center;
-    padding: 5px;
+    width: 240px; 
+    padding: 15px;
     margin: 5px;
     border: 2px solid #0072c6; 
     border-radius: 8px;
@@ -58,11 +69,9 @@
     cursor: pointer;
     font-size: 20px; 
     transition: all 0.3s ease; 
-    align-items: center;
-    justify-content: center;
   }
   .buttondivider{
-      padding: 70px 0;
+      padding: 20px 0;
   }
   .button:hover {
     background-color: #0072c6; 
@@ -77,16 +86,27 @@
     <h1>Ateneo Certificate Validation System</h1>
   </div>
   <div class="container">
-     <div class="user-info">
-        <img src="placeholder.jpg" alt="User Image" width="100"> <!-- Placeholder image -->
-        <div>{{ name }}</div> <!-- Replace with actual user name -->
-        <div>{{ course }}</div>
-        <div>{{ student_id }}</div>
+    <div class="certificate-container">
+        <img src="certificate-placeholder.jpg" alt="Certificate" width="600"> <!-- Placeholder image -->
+        <div><a href="certificate.pdf" download>Download as PDF</a></div>
     </div>
 
-    {% for certificate_box in certificate_boxes %} 
-      {{ certificate_box|safe }}  
-    {% endfor %}
+    <div class="certificate-header">Certificate Name</div> <!-- Replace with actual certificate name -->
+    <div class="user-info">User Name</div> <!-- Replace with actual user name -->
+    <div class="user-info">Date Earned: Date</div> <!-- Replace with actual date earned -->
+
+    <div class="hashcode-container">
+        <span>Unique Hashcode</span> <!-- Replace with actual hashcode -->
+        <button class="copy-button" onclick="copyHashcode()">Copy</button>
+    </div>
+    <div class="buttondivider"></div>
+
+    <div>
+    <button class="button">Item 1</button>
+    <button class="button">Item 2</button>
+    <button class="button">Item 3</button>
+    <button class="button">Item 4</button>
+    </div>
   </div>
   <div class="yellow-line"></div>
   <div class="footer">

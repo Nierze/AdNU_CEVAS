@@ -28,11 +28,13 @@
   }
   .container {
     padding: 70px 0;
+    min-height: calc(100% - 160px);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: calc(100% - 160px);
   }
   .user-info {
     display: flex;
@@ -48,8 +50,8 @@
     padding: 70px 0;
   }
   .button {
-    align-items: center;
-    padding: 5px;
+    width: 240px; 
+    padding: 15px;
     margin: 5px;
     border: 2px solid #0072c6; 
     border-radius: 8px;
@@ -58,11 +60,12 @@
     cursor: pointer;
     font-size: 20px; 
     transition: all 0.3s ease; 
-    align-items: center;
-    justify-content: center;
   }
   .buttondivider{
       padding: 70px 0;
+  }
+  .buttondivider2{
+      padding: 15px 0;
   }
   .button:hover {
     background-color: #0072c6; 
@@ -80,16 +83,16 @@
      <div class="user-info">
         <img src="placeholder.jpg" alt="User Image" width="100"> <!-- Placeholder image -->
         <div>{{ name }}</div> <!-- Replace with actual user name -->
-        <div>{{ course }}</div>
-        <div>{{ student_id }}</div>
     </div>
 
-    {% for certificate_box in certificate_boxes %} 
-      {{ certificate_box|safe }}  
-    {% endfor %}
+    <button class="button" href='http://localhost:8000/view-certificate'>View Certificate</button>
+    <button class="button">Manage Certificates</button>
+    <div class="buttondivider2"></div>
+    <button class="button">Search Certificates</button>
+    <div class="buttondivider"></div>
   </div>
   <div class="yellow-line"></div>
-  <div class="footer">
-  </div>
+  <footer class="footer">
+  </footer>
 </body>
 </html>

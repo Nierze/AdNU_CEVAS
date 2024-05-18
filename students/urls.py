@@ -5,6 +5,9 @@ urlpatterns = [
     path('', views.index, name='index'),
     #path('search/', views.search, name='search')
     path('search/', views.search, name='search'),
-    path('<str:student_number>/', views.student_info, name='student_info')
+    path('view-certificate/', views.viewCert, name='viewCert'),
+    path('certificate/<str:certificate_hash>/', views.viewCertInfo, name='viewCertInfo'),
+    path('<str:student_number>/', views.student_info, name='student_info'),
+    
     
 ]

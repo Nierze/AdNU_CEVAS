@@ -1,15 +1,101 @@
 <style>
-    .container {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin: 10px;
-        border-radius: 5px;
+    body, html {
+      margin: 0;
+      height: 100%;
     }
-</style>
+    .header {
+      background-color: #0047AB;
+      padding: 15px;
+      text-align: center;
+      color: white;
+    }
+    .footer {
+      background-color: #343434;
+      color: white;
+      padding: 40px;
+      position: absolute;
+      width: 100%;
+    }
+    .yellow-line {
+      height: 5px;
+      background-color: #FFAC1C;
+    }
+    .container {
+      {% comment %} padding: 5px 0; {% endcomment %}
+      min-height: calc(100% - 160px);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .search-result {
+      {% comment %} width: 440px;  {% endcomment %}
+      {% comment %} padding: 5px; {% endcomment %}
+      margin: 1px;
+      border-radius: 8px;
+      background-color: white;
+      color: #0072c6; 
+      cursor: pointer;
+      font-size: 20px; 
+      transition: all 0.3s ease; 
+      align-items: center;
+      justify-content: center;
+     }
+    .button {
+      border: 2px solid #0072c6;
+      align-items: center;
+      {% comment %} padding: 5px; {% endcomment %}
+      margin: 2px;
+      border: 2px solid #0072c6; 
+      border-radius: 8px;
+      background-color: white;
+      color: #0072c6; 
+      cursor: pointer;
+      font-size: 20px; 
+      transition: all 0.3s ease; 
+      align-items: center;
+      justify-content: center;
+    }
+    .button:hover {
+      background-color: #0072c6; 
+      color: white; 
+    }
+    .search-bar {
+        width: 100%;
+        max-width: 300px; 
+        margin: 2px; 
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-bar input {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid #0072c6;
+        font-size: 16px;
+    }
+    .submit {
+        width: 100%;
+        max-width: 300px; 
+        margin: 2px; 
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+  </style>
 
 <div class="container">
-    <p><h2><strong>Certificate Name:</strong> {{ certificate_name }}<h2></p>
-    <p><strong>Date Issued:</strong> {{ date_issued }}</p>
-    <p><strong>Certificate Hash:</strong> {{ certificate_hash }}</p>
-
-</div>
+    <div class="search-result">
+      <a code style="text-decoration:none" href="http://localhost:8000/students/certificate/{{ certificate_hash }}">
+        <button class="button">
+            <h2><strong>Certificate Name:</strong> {{ certificate_name }}</h2>
+            <p><strong>Date Issued:</strong> {{ date_issued }}</p>
+            <p><strong>Certificate Hash:</strong> {{ certificate_hash }}</p>
+        </button>
+      </a>
+    </div>
+  </div>
