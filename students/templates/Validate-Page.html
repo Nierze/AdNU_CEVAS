@@ -27,7 +27,7 @@
     background-color: #FFAC1C;
   }
   .container {
-    padding: 70px 0;
+    padding: 4px 0;
     min-height: calc(100% - 160px);
     flex-grow: 1;
     display: flex;
@@ -36,31 +36,26 @@
     justify-content: center;
     min-height: calc(100% - 160px);
   }
-  .user-info {
-    display: flex;
-    font-size: 50px;
+   .search-bar {
+    width: 100%;
+    max-width: 300px; 
+    margin: 2px ; 
+    position: relative;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-    flex-direction: column;
   }
-  .user-info div {
-    font-size: 50px; 
-    padding: 5px 0;
-  }
-  .user-info2 div {
-    font-size: 30px; 
-    padding: 5px 0;
-  }
-  .user-info2 {
-    display: flex;
-    font-size: 30px;
+  .search-bar input {
     align-items: center;
-    margin-bottom: 20px;
-    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #0072c6;
+    font-size: 16px;
   }
-  .button {
-    width: 240px; 
-    padding: 15px;
+  .search-bar form button {
+    align-items: center;
+    padding: 5px;
     margin: 5px;
     border: 2px solid #0072c6; 
     border-radius: 8px;
@@ -70,38 +65,28 @@
     font-size: 20px; 
     transition: all 0.3s ease; 
   }
-  .buttondivider{
-      padding: 70px 0;
-  }
-  .buttondivider2{
-      padding: 15px 0;
-  }
-  .button:hover {
+  .search-bar form button:hover {
     background-color: #0072c6; 
     color: white; 
   }
+
 </style>
 </head>
 <body>
   <div class="header">
     <!-- Placeholder for logo -->
+    {% comment %} <img src="path-to-logo.png" alt="Logo" style="float:left;"> {% endcomment %}
     <h1>Ateneo Certificate Validation System</h1>
   </div>
   <div class="container">
-     <div class="user-info">
-        <div>{{ name }}</div> <!-- Replace with actual user name -->
-     </div>
-      <div class="user-info2">
-        <div>{{ course }}</div>
-        <div>{{ student_id }}</div>
-      </div>
+     <div class="search-bar">
+      <form action="{% url 'validate_hash' %}" method="GET">
+      <input type="text" placeholder="Validate Hash...." name="validate_hash">
+      <button type="submit">Validate</button>
+    </form>
+    </div>
     
-
-      <a href="http://localhost:8000/students/view-certificate/"><button class="button">View Certificate</button></a>
-      <a href="http://localhost:8000/students/validate_hash/"><button class="button"> Validate Hash</button></a>
-    <div class="buttondivider2"></div>
-    <a href="http://localhost:8000/students/search"> <button class="button" >Search Certificates</button></a>
-    <div class="buttondivider"></div>
+    <h1> {{ Result }} </h1>
   </div>
   <div class="yellow-line"></div>
   <footer class="footer">

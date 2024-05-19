@@ -110,8 +110,20 @@ def viewCertInfo(request, certificate_hash):
     return render(request, 'Certificate-Page.html', contexts)
     
         
-    
-    
+def validateHash(request):
+    if request.method == 'GET':
+        search_query = request.GET.get('validate_hash')  # Use a generic name for the query parameter
+        if search_query:
+            try:
+                cert = Certificate.objects.get(certificate_hash=search_query)
+                print(search_query)
+                return render(request, 'Validate-Page.html', {'Result': 'Certificate is valid'})
+            except Certificate.DoesNotExist:
+                return render(request, 'Validate-Page.html', {'Result': 'Certificate not valid'})
+        else:
+            return render(request, 'Validate-Page.html') 
+    else:
+        return HttpResponse('Invalid request method') 
     
         
     
